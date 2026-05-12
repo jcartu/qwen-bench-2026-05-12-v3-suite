@@ -1,0 +1,6 @@
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4

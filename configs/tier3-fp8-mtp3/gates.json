@@ -1,0 +1,13 @@
+{
+  "results": {
+    "fib_5x": [
+      5,
+      5
+    ],
+    "tool_call": true,
+    "reasoning_47x83": true,
+    "multi_turn": true
+  },
+  "gates_passed": 4,
+  "gates_total": 4
+}

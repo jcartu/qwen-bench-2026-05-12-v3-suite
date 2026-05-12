@@ -1,0 +1,19 @@
+{
+  "config_label": "tier3-fp8-mtp3",
+  "benchmark": "humaneval",
+  "total_problems": 164,
+  "completed": 164,
+  "sprint_wall_time_s": 760.8017001152039,
+  "failure_mode_breakdown": {
+    "ok": 145,
+    "empty_response": 13,
+    "test_fail": 6
+  },
+  "pass_rate": 0.8841463414634146,
+  "mean_elapsed_s": 33.13198080731601,
+  "median_elapsed_s": 20.986458778381348,
+  "p95_elapsed_s": 126.52229118347168,
+  "mean_completion_tokens": 4205.884146341464,
+  "mean_reasoning_chars": 12646.969512195123,
+  "effective_tps": 906.6291517166073
+}
