@@ -1,0 +1,23 @@
+{
+  "label": "fp8-mtp3-tools",
+  "mode": "tools",
+  "endpoint": "http://localhost:11435/v1/chat/completions",
+  "model": "Qwen3.6-27B",
+  "n_scenarios": 30,
+  "repeat": 2,
+  "n_trials": 60,
+  "n_concurrent": 4,
+  "max_tokens": 4000,
+  "temperature": 0.7,
+  "wall_s": 66.4,
+  "n_leaks_total": 0,
+  "n_leaks_in_content": 0,
+  "n_leaks_in_tool_call_names": 0,
+  "n_leaks_in_tool_call_arguments": 0,
+  "leak_rate": 0.0,
+  "n_errors": 0,
+  "leaky_indices": [],
+  "error_indices": [],
+  "patterns_seen": [],
+  "timestamp": "2026-05-12T22:53:37+0300"
+}
