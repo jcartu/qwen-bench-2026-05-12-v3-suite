@@ -1,0 +1,19 @@
+{
+  "config_label": "tier3-fp8-dflash-n8",
+  "benchmark": "mbpp",
+  "total_problems": 257,
+  "completed": 257,
+  "sprint_wall_time_s": 668.901430606842,
+  "failure_mode_breakdown": {
+    "ok": 228,
+    "test_fail": 13,
+    "empty_response": 16
+  },
+  "pass_rate": 0.8871595330739299,
+  "mean_elapsed_s": 18.975996059202497,
+  "median_elapsed_s": 10.309835195541382,
+  "p95_elapsed_s": 83.4442241191864,
+  "mean_completion_tokens": 3149.6653696498056,
+  "mean_reasoning_chars": 9446.428015564203,
+  "effective_tps": 1210.139436038635
+}
