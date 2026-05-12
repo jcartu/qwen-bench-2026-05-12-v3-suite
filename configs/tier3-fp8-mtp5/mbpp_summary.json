@@ -1,0 +1,19 @@
+{
+  "config_label": "tier3-fp8-mtp5",
+  "benchmark": "mbpp",
+  "total_problems": 257,
+  "completed": 257,
+  "sprint_wall_time_s": 845.7403960227966,
+  "failure_mode_breakdown": {
+    "ok": 224,
+    "test_fail": 12,
+    "empty_response": 21
+  },
+  "pass_rate": 0.8715953307392996,
+  "mean_elapsed_s": 23.73766752532484,
+  "median_elapsed_s": 12.365286350250244,
+  "p95_elapsed_s": 99.16370391845703,
+  "mean_completion_tokens": 3429.2334630350197,
+  "mean_reasoning_chars": 10220.984435797665,
+  "effective_tps": 1042.060902074074
+}

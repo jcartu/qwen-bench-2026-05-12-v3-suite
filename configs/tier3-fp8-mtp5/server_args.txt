@@ -1,0 +1,14 @@
+LABEL=tier3-fp8-mtp5
+IMAGE=repne/vllm:v3
+MODEL=Qwen/Qwen3.6-27B-FP8
+SPEC_METHOD=mtp
+DRAFTER=-
+TP=2 (GPU0+GPU1 by UUID)
+max-num-batched-tokens=32768
+max-cudagraph-capture-size=256
+num_speculative_tokens=5
+attention-backend=flashinfer
+gpu-memory-utilization=0.85
+max-model-len=262144
+max-num-seqs=128
+launched_at=2026-05-12T06:36:12+03:00
