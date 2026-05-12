@@ -1,0 +1,15 @@
+[OK] Using patched harness: /home/josh/qwen-vllm-test/bench/stress-harness/stress_harness.py
+[OK] Image repne/vllm:v3 ready
+================================================================
+[03:55:58] Tier 3 v3 full suite START — 4 configs
+  Image: repne/vllm:v3
+  Container: vllm-v3-suite
+  Port: 11435
+  GPU 2 must remain at ~89.8 GB (oss-120b protected)
+================================================================
+================================================================
+[03:55:58] CONFIG 1/4: tier3-bf16-dflash-n8  (dflash, num_spec=8)
+  model=Qwen/Qwen3.6-27B  drafter=z-lab/Qwen3.6-27B-DFlash
+================================================================
+[03:55:58]   Launching...
+  [READY] in 319s

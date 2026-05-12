@@ -1,0 +1,36 @@
+[OK] Using patched harness: /home/josh/qwen-vllm-test/bench/stress-harness/stress_harness.py
+[OK] Image repne/vllm:v3 ready
+================================================================
+[02:59:11] Tier 3 v3 full suite START — 4 configs
+  Image: repne/vllm:v3
+  Container: vllm-v3-suite
+  Port: 11435
+  GPU 2 must remain at ~89.8 GB (oss-120b protected)
+================================================================
+================================================================
+[02:59:11] CONFIG 1/4: tier3-bf16-dflash-n8  (dflash, num_spec=8)
+  model=Qwen/Qwen3.6-27B  drafter=z-lab/Qwen3.6-27B-DFlash
+================================================================
+[02:59:11]   Launching...
+  [READY] in 289s
+[03:04:00]   Settling 60s...
+[03:05:00]   Running gates...
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4
+[03:05:55]   Running throughput sweep (c=1,2,4 × ctx=0,16k,32k,64k,128k)...
+[03:24:32]   Running prefill sweep (TTFT @ 8k,16k,32k,64k,128k)...
+[03:29:31]   Running HumanEval + MBPP @ mt=16384...
+  [HUMANEVAL] pass=20.1%  ok=33/164  empty=0  test_fail=0  length_truncated=0
+  [MBPP] pass=0.0%  ok=0/257  empty=0  test_fail=0  length_truncated=0
+[03:31:52]   Tearing down tier3-bf16-dflash-n8...
+  [ETA] suite 1/4 — 1h 38m remaining → ~05:09 MSK finish
+================================================================
+[03:31:52] CONFIG 2/4: tier3-fp8-dflash-n8  (dflash, num_spec=8)
+  model=Qwen/Qwen3.6-27B-FP8  drafter=z-lab/Qwen3.6-27B-DFlash
+================================================================
+[03:31:52]   Launching...
+  [TIMEOUT] 602s elapsed, no /v1/models

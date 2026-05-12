@@ -1,0 +1,107 @@
+[OK] Using patched harness: /home/josh/qwen-vllm-test/bench/stress-harness/stress_harness.py
+[OK] Image repne/vllm:v3 ready
+================================================================
+[03:59:19] Tier 3 v3 full suite START — 4 configs
+  Image: repne/vllm:v3
+  Container: vllm-v3-suite
+  Port: 11435
+  GPU 2 must remain at ~89.8 GB (oss-120b protected)
+================================================================
+================================================================
+[03:59:19] CONFIG 1/4: tier3-bf16-dflash-n8  (dflash, num_spec=8)
+  model=Qwen/Qwen3.6-27B  drafter=z-lab/Qwen3.6-27B-DFlash
+================================================================
+[03:59:19]   Launching...
+  [READY] in 121s
+[04:01:20]   Settling 60s...
+[04:02:20]   Running gates...
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4
+[04:03:04]   Running throughput sweep (c=1,2,4 × ctx=0,16k,32k,64k,128k)...
+[04:21:42]   Running prefill sweep (TTFT @ 8k,16k,32k,64k,128k)...
+[04:26:38]   Running HumanEval + MBPP @ mt=16384...
+  [SERVER OK] tier3-bf16-dflash-n8 finished with live server
+  [HUMANEVAL] pass=92.7%  ok=152/164  empty=6  test_fail=6  length_truncated=0
+  [MBPP] pass=91.1%  ok=234/257  empty=12  test_fail=11  length_truncated=0
+[04:47:59]   Tearing down tier3-bf16-dflash-n8...
+  [ETA] suite 1/4 — 2h 26m remaining → ~07:14 MSK finish
+================================================================
+[04:48:05] CONFIG 2/4: tier3-fp8-dflash-n8  (dflash, num_spec=8)
+  model=Qwen/Qwen3.6-27B-FP8  drafter=z-lab/Qwen3.6-27B-DFlash
+================================================================
+[04:48:05]   Launching...
+  [READY] in 241s
+[04:52:06]   Settling 60s...
+[04:53:06]   Running gates...
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4
+[04:53:49]   Running throughput sweep (c=1,2,4 × ctx=0,16k,32k,64k,128k)...
+[05:12:16]   Running prefill sweep (TTFT @ 8k,16k,32k,64k,128k)...
+[05:17:10]   Running HumanEval + MBPP @ mt=16384...
+  [SERVER OK] tier3-fp8-dflash-n8 finished with live server
+  [HUMANEVAL] pass=89.0%  ok=146/164  empty=10  test_fail=8  length_truncated=0
+  [MBPP] pass=88.7%  ok=228/257  empty=16  test_fail=13  length_truncated=0
+[05:37:50]   Tearing down tier3-fp8-dflash-n8...
+  [ETA] suite 2/4 — 1h 38m remaining → ~07:16 MSK finish
+================================================================
+[05:37:55] CONFIG 3/4: tier3-fp8-mtp3  (mtp, num_spec=3)
+  model=Qwen/Qwen3.6-27B-FP8  drafter=-
+================================================================
+[05:37:55]   Launching...
+  [READY] in 314s
+[05:43:09]   Settling 60s...
+[05:44:09]   Running gates...
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4
+[05:46:46]   Running throughput sweep (c=1,2,4 × ctx=0,16k,32k,64k,128k)...
+[06:04:38]   Running prefill sweep (TTFT @ 8k,16k,32k,64k,128k)...
+[06:09:36]   Running HumanEval + MBPP @ mt=16384...
+  [SERVER OK] tier3-fp8-mtp3 finished with live server
+  [HUMANEVAL] pass=88.4%  ok=145/164  empty=13  test_fail=6  length_truncated=0
+  [MBPP] pass=89.1%  ok=229/257  empty=15  test_fail=13  length_truncated=0
+[06:36:06]   Tearing down tier3-fp8-mtp3...
+  [ETA] suite 3/4 — 0h 52m remaining → ~07:28 MSK finish
+================================================================
+[06:36:12] CONFIG 4/4: tier3-fp8-mtp5  (mtp, num_spec=5)
+  model=Qwen/Qwen3.6-27B-FP8  drafter=-
+================================================================
+[06:36:12]   Launching...
+  [READY] in 319s
+[06:41:31]   Settling 60s...
+[06:42:31]   Running gates...
+Gate 1 (Fibonacci 5x): 5/5
+Gate 2 (Tool call): PASS
+Gate 3 (47x83=3901): PASS
+Gate 4 (multi-turn): PASS
+
+Gates: 4/4
+[06:45:05]   Running throughput sweep (c=1,2,4 × ctx=0,16k,32k,64k,128k)...
+[07:03:25]   Running prefill sweep (TTFT @ 8k,16k,32k,64k,128k)...
+[07:08:23]   Running HumanEval + MBPP @ mt=16384...
+  [SERVER OK] tier3-fp8-mtp5 finished with live server
+  [HUMANEVAL] pass=93.3%  ok=153/164  empty=5  test_fail=6  length_truncated=0
+  [MBPP] pass=87.2%  ok=224/257  empty=21  test_fail=12  length_truncated=0
+[07:31:26]   Tearing down tier3-fp8-mtp5...
+  [ETA] suite 4/4 — 0h 0m remaining → ~07:31 MSK finish
+================================================================
+[07:31:32] Tier 3 suite COMPLETE. Restoring SOTA on :latest...
+================================================================
+[07:31:32] DONE (main flow). Trap will restore SOTA.
+[07:31:32] [TRAP] Cleanup invoked (exit_code=0)
+[07:31:32] [TRAP] Restarting SOTA service on :latest...
+0, 5382 MiB
+1, 1721 MiB
+2, 89784 MiB
+[07:31:32] [TRAP] Done.
