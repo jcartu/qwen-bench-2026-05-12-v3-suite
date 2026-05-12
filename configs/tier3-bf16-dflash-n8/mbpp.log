@@ -1,0 +1,272 @@
+[04:36:49] Stress harness starting
+  config: tier3-bf16-dflash-n8
+  benchmark: mbpp (257 problems)
+  endpoint: http://localhost:11435/v1/chat/completions
+  concurrency: 8
+  max_tokens: 16384
+  request_timeout: 300s
+  [  1/257] ✅ MBPP/224 fr=stop t=5.9s
+  [  2/257] ✅ MBPP/18 fr=stop t=7.7s
+  [  3/257] ✅ MBPP/118 fr=stop t=8.9s
+  [  4/257] ✅ MBPP/451 fr=stop t=9.3s
+  [  5/257] ✅ MBPP/269 fr=stop t=4.6s
+  [  6/257] ✅ MBPP/140 fr=stop t=11.4s
+  [  7/257] ✅ MBPP/312 fr=stop t=8.9s
+  [  8/257] ✅ MBPP/428 fr=stop t=9.9s
+  [  9/257] ✅ MBPP/412 fr=stop t=1.5s
+  [ 10/257] ✅ MBPP/290 fr=stop t=11.8s
+  [ 11/257] ✅ MBPP/447 fr=stop t=4.0s
+  [ 12/257] ✅ MBPP/19 fr=stop t=8.5s
+  [ 13/257] ✅ MBPP/75 fr=stop t=11.5s
+  [ 14/257] ✅ MBPP/74 fr=stop t=32.5s
+  [ 15/257] ✅ MBPP/463 fr=stop t=22.6s
+  [ 16/257] ✅ MBPP/96 fr=stop t=11.2s
+  [ 17/257] ✅ MBPP/444 fr=stop t=27.2s
+  [ 18/257] ✅ MBPP/226 fr=stop t=6.9s
+  [ 19/257] ✅ MBPP/270 fr=stop t=11.5s
+  [ 20/257] ✅ MBPP/119 fr=stop t=18.7s
+  [ 21/257] ✅ MBPP/470 fr=stop t=7.3s
+  [ 22/257] ✅ MBPP/388 fr=stop t=15.0s
+  [ 23/257] ✅ MBPP/429 fr=stop t=10.1s
+  [ 24/257] ❌ MBPP/248 fr=stop t=22.8s
+  [ 25/257] ✅ MBPP/141 fr=stop t=26.2s
+  [ 26/257] ✅ MBPP/247 fr=stop t=59.2s
+  [ 27/257] ✅ MBPP/291 fr=stop t=23.4s
+  [ 28/257] ✅ MBPP/227 fr=stop t=4.3s
+  [ 29/257] ✅ MBPP/77 fr=stop t=11.6s
+  [ 30/257] ✅ MBPP/97 fr=stop t=10.5s
+  [ 31/257] ✅ MBPP/120 fr=stop t=10.8s
+  [ 32/257] ✅ MBPP/20 fr=stop t=14.5s
+  [ 33/257] ✅ MBPP/249 fr=stop t=8.2s
+  [ 34/257] ✅ MBPP/142 fr=stop t=13.0s
+  [ 35/257] ✅ MBPP/292 fr=stop t=6.5s
+  [ 36/257] ✅ MBPP/271 fr=stop t=10.0s
+  [ 37/257] ✅ MBPP/474 fr=stop t=6.5s
+  [ 38/257] ✅ MBPP/79 fr=stop t=4.5s
+  [ 39/257] ✅ MBPP/389 fr=stop t=11.6s
+  [ 40/257] ✅ MBPP/442 fr=stop t=9.3s
+  [ 41/257] ✅ MBPP/452 fr=stop t=11.3s
+  [ 42/257] ✅ MBPP/250 fr=stop t=5.8s
+  [ 43/257] ❌ MBPP/98 fr=stop t=9.6s
+  [ 44/257] ✅ MBPP/56 fr=stop t=14.6s
+  [ 45/257] ✅ MBPP/272 fr=stop t=2.6s
+  [ 46/257] ✅ MBPP/417 fr=stop t=21.6s
+  [ 47/257] ✅ MBPP/456 fr=stop t=3.0s
+  [ 48/257] ❌ MBPP/143 fr=stop t=14.4s
+  [ 49/257] ✅ MBPP/390 fr=stop t=7.2s
+  [ 50/257] ✅ MBPP/293 fr=stop t=9.8s
+  [ 51/257] ✅ MBPP/57 fr=stop t=6.4s
+  [ 52/257] ✅ MBPP/421 fr=stop t=11.1s
+  [ 53/257] ✅ MBPP/80 fr=stop t=7.1s
+  [ 54/257] ✅ MBPP/99 fr=stop t=7.7s
+  [ 55/257] ✅ MBPP/228 fr=stop t=23.8s
+  [ 56/257] ✅ MBPP/145 fr=stop t=5.5s
+  [ 57/257] 🚨[empty_response] MBPP/95 fr=length t=105.4s
+  [ 58/257] ✅ MBPP/273 fr=stop t=5.2s
+  [ 59/257] ✅ MBPP/251 fr=stop t=7.7s
+  [ 60/257] ✅ MBPP/426 fr=stop t=3.5s
+  [ 61/257] ✅ MBPP/294 fr=stop t=7.4s
+  [ 62/257] ✅ MBPP/391 fr=stop t=8.0s
+  [ 63/257] ✅ MBPP/409 fr=stop t=5.2s
+  [ 64/257] ✅ MBPP/82 fr=stop t=10.1s
+  [ 65/257] ✅ MBPP/123 fr=stop t=44.5s
+  [ 66/257] ✅ MBPP/230 fr=stop t=2.7s
+  [ 67/257] ✅ MBPP/100 fr=stop t=15.4s
+  [ 68/257] ❌ MBPP/229 fr=stop t=30.2s
+  [ 69/257] ✅ MBPP/274 fr=stop t=10.4s
+  [ 70/257] ✅ MBPP/252 fr=stop t=13.8s
+  [ 71/257] ❌ MBPP/124 fr=stop t=51.8s
+  [ 72/257] ✅ MBPP/295 fr=stop t=20.7s
+  [ 73/257] ✅ MBPP/433 fr=stop t=11.1s
+  [ 74/257] ✅ MBPP/125 fr=stop t=41.6s
+  [ 75/257] ✅ MBPP/445 fr=stop t=7.5s
+  [ 76/257] ✅ MBPP/464 fr=stop t=6.6s
+  [ 77/257] ✅ MBPP/413 fr=stop t=4.2s
+  [ 78/257] ✅ MBPP/59 fr=stop t=6.8s
+  [ 79/257] ✅ MBPP/392 fr=stop t=28.8s
+  [ 80/257] ✅ MBPP/460 fr=stop t=62.8s
+  [ 81/257] ✅ MBPP/101 fr=stop t=6.9s
+  [ 82/257] ✅ MBPP/58 fr=stop t=70.3s
+  [ 83/257] ✅ MBPP/161 fr=stop t=10.3s
+  [ 84/257] ✅ MBPP/83 fr=stop t=23.0s
+  [ 85/257] ✅ MBPP/448 fr=stop t=29.8s
+  [ 86/257] ✅ MBPP/160 fr=stop t=66.5s
+  [ 87/257] ✅ MBPP/253 fr=stop t=10.3s
+  [ 88/257] ✅ MBPP/126 fr=stop t=24.9s
+  [ 89/257] ✅ MBPP/276 fr=stop t=13.0s
+  [ 90/257] ✅ MBPP/393 fr=stop t=9.4s
+  [ 91/257] ✅ MBPP/434 fr=stop t=11.3s
+  [ 92/257] ✅ MBPP/127 fr=stop t=1.2s
+  [ 93/257] ✅ MBPP/471 fr=stop t=10.2s
+  [ 94/257] ✅ MBPP/296 fr=stop t=20.6s
+  [ 95/257] ✅ MBPP/102 fr=stop t=12.2s
+  [ 96/257] ✅ MBPP/84 fr=stop t=18.4s
+  [ 97/257] ✅ MBPP/255 fr=stop t=10.3s
+  [ 98/257] ✅ MBPP/277 fr=stop t=6.4s
+  [ 99/257] ✅ MBPP/233 fr=stop t=14.9s
+  [100/257] ✅ MBPP/394 fr=stop t=3.4s
+  [101/257] ✅ MBPP/162 fr=stop t=17.4s
+  [102/257] ✅ MBPP/62 fr=stop t=4.6s
+  [103/257] ✅ MBPP/475 fr=stop t=5.8s
+  [104/257] ✅ MBPP/297 fr=stop t=11.4s
+  [105/257] ✅ MBPP/85 fr=stop t=7.1s
+  [106/257] ✅ MBPP/128 fr=stop t=6.3s
+  [107/257] ✅ MBPP/234 fr=stop t=1.9s
+  [108/257] 🚨[empty_response] MBPP/430 fr=length t=89.2s
+  [109/257] ✅ MBPP/453 fr=stop t=26.9s
+  [110/257] ✅ MBPP/61 fr=stop t=50.3s
+  [111/257] ✅ MBPP/163 fr=stop t=15.6s
+  [112/257] ✅ MBPP/256 fr=stop t=14.5s
+  [113/257] ✅ MBPP/457 fr=stop t=4.2s
+  [114/257] ✅ MBPP/278 fr=stop t=11.4s
+  [115/257] ✅ MBPP/395 fr=stop t=9.9s
+  [116/257] ✅ MBPP/299 fr=stop t=11.1s
+  [117/257] ✅ MBPP/422 fr=stop t=13.2s
+  [118/257] ✅ MBPP/103 fr=stop t=36.1s
+  [119/257] ✅ MBPP/104 fr=stop t=7.8s
+  [120/257] ✅ MBPP/86 fr=stop t=5.4s
+  [121/257] ✅ MBPP/232 fr=stop t=87.8s
+  [122/257] ✅ MBPP/257 fr=stop t=5.1s
+  [123/257] ✅ MBPP/63 fr=stop t=12.1s
+  [124/257] ✅ MBPP/279 fr=stop t=9.0s
+  [125/257] ✅ MBPP/129 fr=stop t=22.6s
+  [126/257] ✅ MBPP/300 fr=stop t=15.9s
+  [127/257] ✅ MBPP/437 fr=stop t=13.9s
+  [128/257] ✅ MBPP/443 fr=stop t=12.2s
+  [129/257] ❌ MBPP/461 fr=stop t=9.0s
+  [130/257] ✅ MBPP/64 fr=stop t=5.2s
+  [131/257] ✅ MBPP/410 fr=stop t=11.3s
+  [132/257] ✅ MBPP/164 fr=stop t=29.7s
+  [133/257] ✅ MBPP/105 fr=stop t=7.3s
+  [134/257] ✅ MBPP/259 fr=stop t=9.9s
+  [135/257] ✅ MBPP/237 fr=stop t=14.9s
+  [136/257] ✅ MBPP/130 fr=stop t=19.7s
+  [137/257] ✅ MBPP/280 fr=stop t=6.8s
+  [138/257] ✅ MBPP/397 fr=stop t=5.2s
+  [139/257] ✅ MBPP/87 fr=stop t=30.0s
+  [140/257] ✅ MBPP/165 fr=stop t=24.5s
+  [141/257] 🚨[empty_response] MBPP/418 fr=length t=98.4s
+  [142/257] ✅ MBPP/431 fr=stop t=9.2s
+  [143/257] ✅ MBPP/65 fr=stop t=8.9s
+  [144/257] ✅ MBPP/88 fr=stop t=7.8s
+  [145/257] ✅ MBPP/301 fr=stop t=23.5s
+  [146/257] ✅ MBPP/106 fr=stop t=10.3s
+  [147/257] ❌ MBPP/235 fr=stop t=71.4s
+  [148/257] ✅ MBPP/166 fr=stop t=11.2s
+  [149/257] ✅ MBPP/238 fr=stop t=6.5s
+  [150/257] ✅ MBPP/281 fr=stop t=3.8s
+  [151/257] ✅ MBPP/131 fr=stop t=15.3s
+  [152/257] ✅ MBPP/435 fr=stop t=6.8s
+  [153/257] ✅ MBPP/439 fr=stop t=12.2s
+  [154/257] ✅ MBPP/66 fr=stop t=4.0s
+  [155/257] ✅ MBPP/398 fr=stop t=23.3s
+  [156/257] ✅ MBPP/89 fr=stop t=5.9s
+  [157/257] ✅ MBPP/132 fr=stop t=4.8s
+  [158/257] ✅ MBPP/108 fr=stop t=10.0s
+  [159/257] ✅ MBPP/472 fr=stop t=29.6s
+  [160/257] ✅ MBPP/304 fr=stop t=41.1s
+  [161/257] 🚨[empty_response] MBPP/396 fr=length t=111.8s
+  [162/257] ✅ MBPP/282 fr=stop t=4.0s
+  [163/257] ✅ MBPP/167 fr=stop t=17.9s
+  [164/257] ✅ MBPP/261 fr=stop t=8.2s
+  [165/257] ✅ MBPP/399 fr=stop t=9.1s
+  [166/257] ✅ MBPP/438 fr=stop t=78.8s
+  [167/257] ✅ MBPP/476 fr=stop t=2.0s
+  [168/257] ✅ MBPP/450 fr=stop t=3.5s
+  [169/257] ✅ MBPP/305 fr=stop t=20.4s
+  [170/257] ✅ MBPP/90 fr=stop t=3.6s
+  [171/257] ✅ MBPP/454 fr=stop t=20.7s
+  [172/257] ✅ MBPP/260 fr=stop t=72.9s
+  [173/257] ✅ MBPP/419 fr=stop t=23.7s
+  [174/257] ✅ MBPP/168 fr=stop t=4.0s
+  [175/257] ✅ MBPP/133 fr=stop t=5.1s
+  [176/257] ✅ MBPP/239 fr=stop t=44.8s
+  [177/257] ✅ MBPP/262 fr=stop t=6.1s
+  [178/257] ✅ MBPP/67 fr=stop t=24.3s
+  [179/257] 🚨[empty_response] MBPP/414 fr=length t=102.5s
+  [180/257] ✅ MBPP/458 fr=stop t=2.6s
+  [181/257] ✅ MBPP/240 fr=stop t=14.9s
+  [182/257] ✅ MBPP/424 fr=stop t=5.9s
+  [183/257] ✅ MBPP/135 fr=stop t=4.3s
+  [184/257] ✅ MBPP/283 fr=stop t=19.0s
+  [185/257] ✅ MBPP/91 fr=stop t=6.6s
+  [186/257] ✅ MBPP/111 fr=stop t=14.5s
+  [187/257] ✅ MBPP/68 fr=stop t=9.5s
+  [188/257] ✅ MBPP/109 fr=stop t=35.9s
+  [189/257] ✅ MBPP/12 fr=stop t=8.0s
+  [190/257] ✅ MBPP/400 fr=stop t=25.9s
+  [191/257] ✅ MBPP/407 fr=stop t=25.1s
+  [192/257] ✅ MBPP/170 fr=stop t=8.4s
+  [193/257] ✅ MBPP/401 fr=stop t=9.8s
+  [194/257] ✅ MBPP/264 fr=stop t=18.2s
+  [195/257] ✅ MBPP/411 fr=stop t=7.4s
+  [196/257] ✅ MBPP/306 fr=stop t=51.8s
+  [197/257] ✅ MBPP/462 fr=stop t=27.3s
+  [198/257] ✅ MBPP/307 fr=stop t=32.9s
+  [199/257] ✅ MBPP/69 fr=stop t=14.4s
+  [200/257] ✅ MBPP/14 fr=stop t=11.1s
+  [201/257] ✅ MBPP/446 fr=stop t=19.9s
+  [202/257] ✅ MBPP/171 fr=stop t=3.5s
+  [203/257] ✅ MBPP/113 fr=stop t=12.6s
+  [204/257] ❌ MBPP/244 fr=stop t=10.1s
+  [205/257] ❌ MBPP/137 fr=stop t=15.7s
+  [206/257] 🚨[empty_response] MBPP/11 fr=length t=102.0s
+  [207/257] ✅ MBPP/265 fr=stop t=15.9s
+  [208/257] ✅ MBPP/404 fr=stop t=5.1s
+  [209/257] ✅ MBPP/441 fr=stop t=3.2s
+  [210/257] ✅ MBPP/92 fr=stop t=29.4s
+  [211/257] ✅ MBPP/285 fr=stop t=15.8s
+  [212/257] ✅ MBPP/478 fr=stop t=8.5s
+  [213/257] ✅ MBPP/432 fr=stop t=17.4s
+  [214/257] ✅ MBPP/93 fr=stop t=4.4s
+  [215/257] ✅ MBPP/16 fr=stop t=13.7s
+  [216/257] 🚨[empty_response] MBPP/242 fr=length t=89.3s
+  [217/257] ✅ MBPP/415 fr=stop t=26.2s
+  [218/257] ✅ MBPP/468 fr=stop t=32.9s
+  [219/257] ✅ MBPP/115 fr=stop t=14.5s
+  [220/257] ✅ MBPP/172 fr=stop t=4.9s
+  [221/257] ✅ MBPP/266 fr=stop t=5.4s
+  [222/257] ✅ MBPP/309 fr=stop t=4.7s
+  [223/257] 🚨[empty_response] MBPP/284 fr=length t=98.6s
+  [224/257] ✅ MBPP/405 fr=stop t=4.8s
+  [225/257] ✅ MBPP/436 fr=stop t=4.2s
+  [226/257] ✅ MBPP/17 fr=stop t=3.0s
+  [227/257] ✅ MBPP/138 fr=stop t=22.8s
+  [228/257] ✅ MBPP/116 fr=stop t=7.0s
+  [229/257] ✅ MBPP/71 fr=stop t=16.6s
+  [230/257] ✅ MBPP/473 fr=stop t=16.7s
+  [231/257] ✅ MBPP/245 fr=stop t=36.9s
+  [232/257] ✅ MBPP/286 fr=stop t=36.7s
+  [233/257] ❌ MBPP/246 fr=stop t=12.7s
+  [234/257] ✅ MBPP/139 fr=stop t=21.8s
+  [235/257] ✅ MBPP/406 fr=stop t=4.2s
+  [236/257] ✅ MBPP/287 fr=stop t=10.5s
+  [237/257] ✅ MBPP/267 fr=stop t=14.8s
+  [238/257] ❌ MBPP/310 fr=stop t=12.2s
+  [239/257] ✅ MBPP/455 fr=stop t=3.6s
+  [240/257] 🚨[empty_response] MBPP/308 fr=length t=98.6s
+  [241/257] ✅ MBPP/479 fr=stop t=7.8s
+  [242/257] ✅ MBPP/477 fr=stop t=5.7s
+  [243/257] ✅ MBPP/420 fr=stop t=12.4s
+  [244/257] ✅ MBPP/268 fr=stop t=5.7s
+  [245/257] ✅ MBPP/72 fr=stop t=23.4s
+  [246/257] ✅ MBPP/440 fr=stop t=28.5s
+  [247/257] ✅ MBPP/117 fr=stop t=27.5s
+  [248/257] ✅ MBPP/427 fr=stop t=5.6s
+  [249/257] 🚨[empty_response] MBPP/70 fr=length t=115.7s
+  [250/257] ✅ MBPP/425 fr=stop t=6.8s
+  [251/257] ✅ MBPP/465 fr=stop t=14.9s
+  [252/257] ✅ MBPP/223 fr=stop t=42.7s
+  [253/257] ✅ MBPP/311 fr=stop t=42.2s
+  [254/257] 🚨[empty_response] MBPP/94 fr=length t=95.2s
+  [255/257] ✅ MBPP/459 fr=stop t=30.0s
+  [256/257] ✅ MBPP/408 fr=stop t=37.6s
+  [257/257] 🚨[empty_response] MBPP/222 fr=length t=117.8s
+
+[04:47:59] DONE in 669.9s (11.2 min)
+  Pass rate: 234/257 = 91.1%
+  Failure modes: {'ok': 234, 'test_fail': 11, 'empty_response': 12}
+  Mean elapsed: 19.8s, p95: 87.8s
+  Effective tok/s: 1079.4
+  Saved: /tmp/qwen-bench-2026-05-12-v3-suite/configs/tier3-bf16-dflash-n8/mbpp.jsonl
+  Summary: /tmp/qwen-bench-2026-05-12-v3-suite/configs/tier3-bf16-dflash-n8/mbpp_summary.json

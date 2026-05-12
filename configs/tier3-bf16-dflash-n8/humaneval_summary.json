@@ -1,0 +1,19 @@
+{
+  "config_label": "tier3-bf16-dflash-n8",
+  "benchmark": "humaneval",
+  "total_problems": 164,
+  "completed": 164,
+  "sprint_wall_time_s": 610.6416301727295,
+  "failure_mode_breakdown": {
+    "ok": 152,
+    "empty_response": 6,
+    "test_fail": 6
+  },
+  "pass_rate": 0.926829268292683,
+  "mean_elapsed_s": 27.331346315581623,
+  "median_elapsed_s": 17.511387944221497,
+  "p95_elapsed_s": 103.91984033584595,
+  "mean_completion_tokens": 3755.682926829268,
+  "mean_reasoning_chars": 11327.871951219513,
+  "effective_tps": 1008.6636245644995
+}
