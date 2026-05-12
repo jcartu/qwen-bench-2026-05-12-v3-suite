@@ -11,11 +11,11 @@ Full v3 suite is done. Headline first, then the bug.
 | BF16+DFlash N=8 | 90.9 % → **92.7 %** | ~245 → 300 | 0 |
 | FP8+DFlash N=8 | (new) → 89.0 % | — → 375 | 0 |
 | FP8+MTP=3 | 84.8 % → **88.4 %** | ~245 → 369 | 0 |
-| **FP8+MTP=5** | (new) → **93.3 %** ⭐ | — → **402** ⭐ | 0 |
+| FP8+MTP=5 | (new) → 93.3 % | — → **402** | 0 ⚠️ (see footnote) |
 
 Every v3 config hit **0 length_truncated** on both HE (164 problems) and MBPP (257 problems). The `empty_response` drift I was seeing on v2 FP8+MTP=3 at mt=16384 — also gone on v3. Suite ran clean for 3 h 32 min, no engine crashes on Run 2.
 
-I'm recommending we promote **`:v3` + FP8+MTP=5** as the new online SOTA: +8.5 pp HE over current `:latest` FP8+MTP=3, +64 % peak throughput, +47 % single-user throughput.
+I'm running **`:v3` + FP8+MTP=3 in production right now** (live since ~10:03 MSK 2026-05-12, 88.4 % HE / 89.1 % MBPP / 369 tok/s peak / 98 tok/s single-user). MTP=5 scored higher on the offline harness (93.3 % HE, 402 tok/s peak), but — footnote — it leaks raw `<think>...</think>` blocks into the OpenAI `content` field on production traffic. Reasoning is supposed to be routed into the separate `reasoning` field, and MTP=3 does that cleanly; MTP=5 doesn't. The harness counts the leaked think blobs as code, which is where the +4.9 pp HE comes from — not real downstream code quality. So MTP=5 stays as a benchmark-only number for now, until the leak is fixed upstream.
 
 Full report: https://github.com/jcartu/qwen-bench-2026-05-12-v3-suite/blob/main/FINAL_REPORT.md
 
@@ -66,3 +66,50 @@ Happy to bisect kernel paths or knobs if you want — let me know what flags to 
 **Priority from my side:** low. Promotion to `:latest` is gated on this not reproducing in production load. Given Run 2 was clean and we have hardened logging now, I'd suggest we promote `:v3` to staging, run it under real traffic for 24 h with the hardened launcher capturing crashes, and only block public promotion if it recurs.
 
 Cool with that approach? Or do you want a deeper repro attempt first?
+
+---
+
+## Second finding from the production rollout (sharing in case it's useful)
+
+First production-promotion attempt with `:v3` + FP8+MTP=3 entered a tight systemd crash-loop. Root cause:
+
+```
+ValueError: use_local_argmax_reduction is enabled but draft model
+Qwen3_5MTP does not implement get_top_tokens().
+```
+
+I had carried `--speculative-config.use_local_argmax_reduction true` and `--speculative-config.attention_backend flashinfer` over from the DFlash configs into the MTP production launcher, under the (wrong) impression that `use_local_argmax_reduction` was a TP>1 thing. It's actually a **drafter-capability** thing: DFlash implements `get_top_tokens()`, the in-model `Qwen3_5MTP` drafter does not.
+
+Confirmed in retrospect by looking at my own bench `server.log`s — the engine's `non-default args` dict has `use_local_argmax_reduction: True` only in the two DFlash config logs, and is absent from both MTP=3 and MTP=5 logs. The bench harness was right; the production launcher was wrong. Mentioning in case anyone else trips over the same edge: would be lovely if either the docs or the error message itself called out the drafter constraint.
+
+---
+
+## Third finding (think-token leak validation)
+
+I added a permanent dual-mode leak detector to the bench harness ([`harness/leak_probe.py`](https://github.com/jcartu/qwen-bench-2026-05-12-v3-suite/blob/main/harness/leak_probe.py)) and ran it against four configurations. Detector logic differs by mode:
+
+- **`--mode chat`** — 75-prompt diverse corpus (15 categories: trivial echo, arithmetic, short code, algorithmic code, word problems, logic, creative, knowledge, multi-step, definitional, translation, edge cases, big-O, numerical estimates, pattern recognition, coding gotchas), case-insensitive regex scan of `choices[0].message.content` for `<think`/`</think>`/`<reasoning`/`</reasoning>`.
+- **`--mode tools`** — 30 scenarios (single-tool, full-toolbox, multi-tool-call) across 10 OpenAI-schema function tools (`get_weather`, `search_web`, `send_email`, `run_sql`, `calculator`, `create_file`, `list_files`, `get_stock_price`, `translate`, `create_ticket`), scans `content` AND every `tool_calls[*].function.name` AND every `tool_calls[*].function.arguments` for the same patterns.
+
+The `reasoning` field is allowed to contain those tags — that's where they belong. Only leaks into user-visible surfaces count.
+
+Results on `:v3`:
+
+| Config | Mode | Trials | Wall | Leaks | Notes |
+|---|---|---:|---:|---:|---|
+| FP8+MTP=3 | chat | 75 | 97.8s | 0 | T=0, smoke |
+| FP8+MTP=2 | chat | 74 | ~85s | 0 | T=0, via `NUM_SPEC=2` systemd drop-in |
+| FP8+MTP=3 extended | chat | **300** | **440.6s** | **0** | T=0.7, 4× corpus, unique seed per trial |
+| **FP8+MTP=3 tools** | **tools** | **120** | **131.5s** | **0** | **T=0.7, 30 scenarios × 4 reps, 114/120 (95 %) produced real tool_calls, 4 multi-tool responses, scanned content + tool_call names + tool_call arguments** |
+
+So on my hardware / your `:v3` image, the leak class appears to be specific to MTP=5 — MTP=3 and MTP=2 are clean across **420 trials** of diverse traffic spanning plain chat AND realistic tool/function-calling (95 % real tool-call rate, multi-tool responses included, avg 1532 chars reasoning per tools-mode trial so the parser is heavily exercised). MTP=5 leaked on its very first 2-prompt smoke test under the same infrastructure.
+
+Honest scope of the probe (worth flagging because we may not yet have caught all the failure modes):
+- **No streaming SSE.** Final non-streaming JSON only. A transient `<think>` substring in an SSE delta could be invisible to this detector but visible to a streaming client.
+- **No `response_format=json_object`** (likely covered indirectly by tools mode, but unconfirmed).
+- **No long-context.** All trials are short single-turn. Behavior at 32k/128k prefill is untested.
+- **Single-turn tool-calling only.** Multi-turn tool-use loops (assistant emits `tool_calls`, runner returns a `tool` role, model continues) are not exercised yet.
+- Concurrency 4, max_tokens 3000 (chat) / 4000 (tools).
+- 420 combined trials — a rare-event leak <1/420 would still pass.
+
+Methodology, raw artifacts, decision matrix, and CI-gating instructions in [`LEAK_DETECTION.md`](https://github.com/jcartu/qwen-bench-2026-05-12-v3-suite/blob/main/LEAK_DETECTION.md). Raw run output under `leak-runs/` (responses.jsonl, leaks.jsonl, summary.json, run.log per config, including `leak-runs/fp8-mtp3-tools/` for the tools mode). If you have a known repro for MTP=3/MTP=2 leaking on `:v3` (streaming, multi-turn tool loops, long-context, etc.), pass it over and I'll fold it into the corpus and re-run.

@@ -1,0 +1,148 @@
+[leak-probe] mode=tools label=fp8-mtp3-tools endpoint=http://localhost:11435/v1/chat/completions model=Qwen3.6-27B
+[leak-probe] n_scenarios=30 repeat=4 n_trials=120 concurrency=4 max_tokens=4000 temperature=0.7
+[leak-probe] ok   #  3 (0.672s) 'search_web({"query": "best practices for )'
+[leak-probe] ok   #  4 (0.93s) 'search_web({"query": "latest news James W)'
+[leak-probe] ok   #  1 (1.656s) 'get_weather({"city": "Phoenix", "unit": "f)'
+[leak-probe] ok   #  0 (1.754s) 'get_weather({"city": "Tokyo"})'
+[leak-probe] ok   #  2 (2.236s) 'get_weather({"city": "Reykjavik", "unit": )'
+[leak-probe] ok   #  5 (1.425s) 'send_email({"to": "alice@example.com", "s)'
+[leak-probe] ok   #  9 (0.757s) 'calculator({"expression": "17 * 23 + 89"})'
+[leak-probe] ok   # 10 (3.29s) 'calculator({"expression": "(120 - 6) / 2")'
+[leak-probe] ok   # 11 (1.219s) 'create_file({"path": "/tmp/hello.txt", "co)'
+[leak-probe] ok   # 12 (0.8s) 'list_files({"path": "/var/log", "recursiv)'
+[leak-probe] ok   #  6 (7.667s) 'send_email({"to": "bob@example.com", "sub)'
+[leak-probe] ok   # 13 (1.087s) 'get_stock_price({"ticker": "NVDA"})'
+[leak-probe] ok   # 14 (1.197s) 'get_stock_price({"ticker": "AAPL"})'
+[leak-probe] ok   #  7 (9.407s) 'run_sql({"query": "SELECT COUNT(DISTIN)'
+[leak-probe] ok   # 15 (2.145s) 'translate({"text": "hello world", "sourc)'
+[leak-probe] ok   # 16 (3.619s) 'translate({"text": "I love coffee in the)'
+[leak-probe] ok   # 19 (1.115s) 'get_weather({"city": "Paris"})'
+[leak-probe] ok   # 18 (3.224s) 'create_ticket({"title": "Database replicatio)'
+[leak-probe] ok   # 20 (0.928s) 'search_web({"query": "rust async runtime )'
+[leak-probe] ok   # 17 (6.521s) 'create_ticket({"title": "Login broken", "des)'
+[leak-probe] ok   # 23 (1.028s) 'get_stock_price({"ticker": "GOOGL"})'
+[leak-probe] ok   # 24 (1.61s) 'translate({"text": "thank you", "target_)'
+[leak-probe] ok   # 21 (5.874s) 'calculator({"expression": "2^32"})'
+[leak-probe] ok   # 22 (5.693s) 'send_email({"to": "john@example.com", "su)'
+[leak-probe] ok   # 26 (2.444s) 'get_weather({"city": "Seattle"}),get_stock_price({"ticker": "MSFT"})'
+[leak-probe] ok   # 27 (5.843s) 'get_weather({"city": "London", "unit": "c")'
+[leak-probe] ok   #  8 (26.187s) 'run_sql({"query": "SELECT \\n    p.prod)'
+[leak-probe] ok   # 29 (1.019s) '  Hello! How can I assist you today?'
+[leak-probe] ok   # 31 (1.014s) 'get_weather({"city": "Phoenix", "unit": "f)'
+[leak-probe] ok   # 32 (0.953s) 'get_weather({"city": "Reykjavik", "unit": )'
+[leak-probe] ok   # 33 (0.687s) 'search_web({"query": "best practices for )'
+[leak-probe] ok   # 34 (0.907s) 'search_web({"query": "latest news James W)'
+[leak-probe] ok   # 30 (4.266s) 'get_weather({"city": "Tokyo"})'
+[leak-probe] ok   # 28 (9.264s) '  4'
+[leak-probe] ok   # 35 (1.516s) 'send_email({"to": "alice@example.com", "s)'
+[leak-probe] ok   # 36 (3.658s) 'send_email({"to": "bob@example.com", "sub)'
+[leak-probe] ok   # 25 (16.549s) 'create_ticket({"title": "typo on docs page",)'
+[leak-probe] ok   # 39 (0.854s) 'calculator({"expression": "17 * 23 + 89"})'
+[leak-probe] ok   # 41 (0.88s) 'create_file({"path": "/tmp/hello.txt", "co)'
+[leak-probe] ok   # 42 (1.545s) 'list_files({"path": "/var/log", "recursiv)'
+[leak-probe] ok   # 43 (1.076s) 'get_stock_price({"ticker": "NVDA"})'
+[leak-probe] ok   # 40 (3.982s) 'calculator({"expression": "(120 - 6) / 2")'
+[leak-probe] ok   # 44 (1.145s) 'get_stock_price({"ticker": "AAPL"})'
+[leak-probe] ok   # 46 (1.314s) 'translate({"text": "I love coffee in the)'
+[leak-probe] ok   # 45 (3.182s) 'translate({"text": "hello world", "targe)'
+[leak-probe] ok   # 37 (11.919s) 'run_sql({"query": "SELECT COUNT(DISTIN)'
+[leak-probe] ok   # 47 (2.253s) 'create_ticket({"title": "Login broken", "des)'
+[leak-probe] ok   # 49 (1.442s) 'get_weather({"city": "Paris"})'
+[leak-probe] ok   # 50 (1.551s) 'search_web({"query": "rust async runtime )'
+[leak-probe] ok   # 48 (4.496s) 'create_ticket({"title": "Database replicatio)'
+[leak-probe] ok   # 38 (20.189s) 'run_sql({"query": "SELECT \\n    produc)'
+[leak-probe] ok   # 52 (8.204s) 'send_email({"to": "john@example.com", "su)'
+[leak-probe] ok   # 51 (9.347s) 'calculator({"expression": "2^32"})'
+[leak-probe] ok   # 54 (1.863s) 'translate({"text": "thank you", "target_)'
+[leak-probe] ok   # 56 (1.639s) 'get_weather({"city": "Seattle"}),get_stock_price({"ticker": "MSFT"})'
+[leak-probe] ok   # 57 (2.498s) 'get_weather({"city": "London", "unit": "c")'
+[leak-probe] ok   # 58 (1.122s) 'calculator({"expression": "2+2"})'
+[leak-probe] ok   # 59 (1.219s) '  Hello! How can I assist you today?'
+[leak-probe] ok   # 53 (12.886s) 'get_stock_price({"ticker": "GOOGL"})'
+[leak-probe] ok   # 61 (2.945s) 'get_weather({"city": "Phoenix", "unit": "f)'
+[leak-probe] ok   # 62 (1.114s) 'get_weather({"city": "Reykjavik", "unit": )'
+[leak-probe] ok   # 64 (0.749s) 'search_web({"query": "latest news James W)'
+[leak-probe] ok   # 63 (1.32s) 'search_web({"query": "best practices for )'
+[leak-probe] ok   # 65 (1.36s) 'send_email({"to": "alice@example.com", "s)'
+[leak-probe] ok   # 55 (9.879s) 'create_ticket({"title": "typo on docs page",)'
+[leak-probe] ok   # 60 (7.011s) 'get_weather({"city": "Tokyo"})'
+[leak-probe] ok   # 69 (1.034s) 'calculator({"expression": "17 * 23 + 89"})'
+[leak-probe] ok   # 66 (3.178s) 'send_email({"to": "bob@example.com", "sub)'
+[leak-probe] ok   # 71 (0.953s) 'create_file({"path": "/tmp/hello.txt", "co)'
+[leak-probe] ok   # 72 (1.106s) 'list_files({"path": "/var/log", "recursiv)'
+[leak-probe] ok   # 73 (1.09s) 'get_stock_price({"ticker": "NVDA"})'
+[leak-probe] ok   # 70 (4.564s) 'calculator({"expression": "(120 - 6) / 2")'
+[leak-probe] ok   # 74 (1.185s) 'get_stock_price({"ticker": "AAPL"})'
+[leak-probe] ok   # 75 (1.975s) 'translate({"text": "hello world", "targe)'
+[leak-probe] ok   # 76 (5.685s) 'translate({"text": "I love coffee in the)'
+[leak-probe] ok   # 77 (5.602s) 'create_ticket({"title": "Login broken", "des)'
+[leak-probe] ok   # 78 (2.82s) 'create_ticket({"title": "Database replicatio)'
+[leak-probe] ok   # 80 (1.006s) 'search_web({"query": "rust async runtime )'
+[leak-probe] ok   # 79 (3.343s) 'get_weather({"city": "Paris"})'
+[leak-probe] ok   # 68 (18.293s) 'run_sql({"query": "SELECT \\n    produc)'
+[leak-probe] ok   # 67 (19.66s) 'run_sql({"query": "SELECT COUNT(DISTIN)'
+[leak-probe] ok   # 83 (1.339s) 'get_stock_price({"ticker": "GOOGL"})'
+[leak-probe] ok   # 82 (7.434s) 'send_email({"to": "john@example.com", "su)'
+[leak-probe] ok   # 84 (6.464s) 'translate({"text": "thank you", "target_)'
+[leak-probe] ok   # 86 (1.699s) 'get_weather({"city": "Seattle"}),get_stock_price({"ticker": "MSFT"})'
+[leak-probe] ok   # 85 (10.884s) 'create_ticket({"title": "typo on docs page",)'
+[leak-probe] ok   # 87 (5.557s) 'get_weather({"city": "London", "unit": "c")'
+[leak-probe] ok   # 89 (1.111s) '  Hello! How can I assist you today?'
+[leak-probe] ok   # 91 (1.304s) 'get_weather({"city": "Phoenix", "unit": "f)'
+[leak-probe] ok   # 88 (6.861s) '  2 + 2 equals 4.'
+[leak-probe] ok   # 93 (1.416s) 'search_web({"query": "best practices for )'
+[leak-probe] ok   # 81 (19.469s) 'calculator({"expression": "2**32"})'
+[leak-probe] ok   # 94 (1.046s) 'search_web({"limit": 5, "query": "latest )'
+[leak-probe] ok   # 95 (1.178s) 'send_email({"to": "alice@example.com", "s)'
+[leak-probe] ok   # 96 (3.747s) 'send_email({"to": "bob@example.com", "sub)'
+[leak-probe] ok   # 92 (6.92s) 'get_weather({"city": "Reykjavik", "unit": )'
+[leak-probe] ok   # 99 (0.93s) 'calculator({"expression": "17 * 23 + 89"})'
+[leak-probe] ok   # 90 (10.055s) 'get_weather({"city": "Tokyo"})'
+[leak-probe] ok   #101 (0.949s) 'create_file({"path": "/tmp/hello.txt", "co)'
+[leak-probe] ok   #102 (1.168s) 'list_files({"path": "/var/log", "recursiv)'
+[leak-probe] ok   #100 (2.944s) 'calculator({"expression": "(120 - 6) / 2")'
+[leak-probe] ok   #103 (0.975s) 'get_stock_price({"ticker": "NVDA"})'
+[leak-probe] ok   #104 (1.211s) 'get_stock_price({"ticker": "AAPL"})'
+[leak-probe] ok   #105 (2.039s) 'translate({"text": "hello world", "targe)'
+[leak-probe] ok   #106 (5.121s) 'translate({"text": "I love coffee in the)'
+[leak-probe] ok   #107 (4.626s) 'create_ticket({"title": "Login broken", "des)'
+[leak-probe] ok   #109 (1.576s) 'get_weather({"city": "Paris"})'
+[leak-probe] ok   #108 (2.864s) 'create_ticket({"title": "Database Replicatio)'
+[leak-probe] ok   # 97 (16.808s) 'run_sql({"query": "SELECT COUNT(DISTIN)'
+[leak-probe] ok   #110 (1.538s) 'search_web({"query": "rust async runtime )'
+[leak-probe] ok   #113 (1.894s) 'get_stock_price({"ticker": "GOOGL"})'
+[leak-probe] ok   #111 (3.806s) 'calculator({"expression": "2^32"})'
+[leak-probe] ok   #114 (1.292s) 'translate({"text": "thank you", "target_)'
+[leak-probe] ok   #116 (1.527s) 'get_weather({"city": "Seattle"}),get_stock_price({"ticker": "MSFT"})'
+[leak-probe] ok   #112 (6.588s) 'send_email({"to": "john@example.com", "su)'
+[leak-probe] ok   # 98 (23.015s) 'run_sql({"query": "SELECT \\n    produc)'
+[leak-probe] ok   #118 (2.813s) 'calculator({"expression": "2+2"})'
+[leak-probe] ok   #119 (0.971s) '  Hello! How can I help you today?'
+[leak-probe] ok   #117 (6.08s) 'get_weather({"city": "London", "unit": "c")'
+[leak-probe] ok   #115 (9.728s) 'create_ticket({"title": "typo on docs page",)'
+
+[leak-probe] === fp8-mtp3-tools (tools) summary ===
+{
+  "label": "fp8-mtp3-tools",
+  "mode": "tools",
+  "endpoint": "http://localhost:11435/v1/chat/completions",
+  "model": "Qwen3.6-27B",
+  "n_scenarios": 30,
+  "repeat": 4,
+  "n_trials": 120,
+  "n_concurrent": 4,
+  "max_tokens": 4000,
+  "temperature": 0.7,
+  "wall_s": 131.5,
+  "n_leaks_total": 0,
+  "n_leaks_in_content": 0,
+  "n_leaks_in_tool_call_names": 0,
+  "n_leaks_in_tool_call_arguments": 0,
+  "leak_rate": 0.0,
+  "n_errors": 0,
+  "leaky_indices": [],
+  "error_indices": [],
+  "patterns_seen": [],
+  "timestamp": "2026-05-12T10:46:09+0300"
+}
+[leak-probe] artifacts: leak-runs/fp8-mtp3-tools/summary.json, responses.jsonl, leaks.jsonl

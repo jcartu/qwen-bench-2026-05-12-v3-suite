@@ -1,0 +1,16 @@
+{
+  "label": "fp8-mtp3",
+  "endpoint": "http://localhost:11435/v1/chat/completions",
+  "model": "Qwen3.6-27B",
+  "n_prompts": 75,
+  "n_concurrent": 4,
+  "max_tokens": 3000,
+  "wall_s": 97.8,
+  "n_leaks_in_content": 0,
+  "leak_rate": 0.0,
+  "n_errors": 0,
+  "leaky_indices": [],
+  "error_indices": [],
+  "patterns_seen": [],
+  "timestamp": "2026-05-12T10:16:59+0300"
+}

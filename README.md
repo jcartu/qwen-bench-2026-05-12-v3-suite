@@ -16,14 +16,16 @@ This is a follow-up to [`qwen-bench-2026-05-11-v2-followup`](https://github.com/
 | BF16+DFlash N=8 | **92.7%** (152/164) | **91.1%** (234/257) | 300 | 86 | 0 |
 | FP8+DFlash N=8 | 89.0% (146/164) | 88.7% (228/257) | 375 | 86 | 0 |
 | FP8+MTP=3 | 88.4% (145/164) | 89.1% (229/257) | 369 | 98 | 0 |
-| **FP8+MTP=5** | **93.3%** (153/164) ⭐ | 87.2% (224/257) | **402** ⭐ | **101** ⭐ | 0 |
+| **FP8+MTP=5** | 93.3% (153/164) | 87.2% (224/257) | **402** | **101** | 0 ⚠️ leaks `<think>` |
 
-**Recommendation: promote `repne/vllm:v3` + FP8+MTP=5 as new online SOTA.**
+**Production SOTA = `repne/vllm:v3` + FP8+MTP=3** (validated in production 2026-05-12 ~10:03 MSK).
 
-- +8.5pp HumanEval over current v2 FP8+MTP=3 SOTA (84.8% → 93.3%)
-- +64% peak throughput (245 → 402 tok/s)
-- 0 length-truncations across all 4 configs (vs mixed truncation on v2)
-- Run-2 ran clean for 3.5 h with zero engine crashes
+- HE 88.4% / MBPP 89.1% / 369 tok/s peak / 98 tok/s single-user / 0 length-truncation
+- +3.6pp HumanEval over v2 FP8+MTP=3 SOTA (84.8% → 88.4%) on the matching config
+- Reasoning cleanly separated into the OpenAI `reasoning` field; `content` clean
+- Currently deployed (systemd unit `vllm-qwen36-27b-sota.service`)
+
+**MTP=5 is benchmark-only, NOT production.** Although it scores 93.3% HE in the offline harness, it leaks raw `<think>...</think>` tokens directly into `content` for production requests — confirmed by live smoke test. The +4.9pp HE on MTP=5 reflects the harness counting those leaked think blobs, not real downstream code quality. Final production config = **FP8 + MTP=3**, validated leak-free across 420 trials at T=0.7 (300 plain-chat + 120 tool-calling, the latter exercising 10 OpenAI-format function tools across 30 scenarios with 95 % real tool-call rate). See [`FINAL_REPORT.md` § Production Incident](./FINAL_REPORT.md#production-incident-2026-05-12-mtp--use_local_argmax_reduction-incompatibility) and [`LEAK_DETECTION.md`](./LEAK_DETECTION.md) for the methodology + per-config leak results.
 
 Full numbers, throughput matrices, prefill scaling, and v3-vs-v2 deltas in [`FINAL_REPORT.md`](./FINAL_REPORT.md).
 
@@ -34,8 +36,13 @@ Full numbers, throughput matrices, prefill scaling, and v3-vs-v2 deltas in [`FIN
 | [`FINAL_REPORT.md`](./FINAL_REPORT.md) | Full Tier-3 report — TL;DR, throughput matrices, quality, v3-vs-v2, SOTA recommendation |
 | [`DISCORD_V3.md`](./DISCORD_V3.md) | Ready-to-paste Discord broadcast summarizing the v3 suite |
 | [`repne_reply_draft.md`](./repne_reply_draft.md) | Drafted reply for Repne — Run-1 crash artifacts + hardened launcher offer |
+| [`LEAK_DETECTION.md`](./LEAK_DETECTION.md) | Think-token leak probe — methodology, per-config results, decision matrix |
 | [`harness/tier3_v3_suite.sh`](./harness/tier3_v3_suite.sh) | Hardened orchestrator (per-phase log snapshots, trap-based cleanup, server-alive checks) |
 | [`harness/sweep_lib.sh`](./harness/sweep_lib.sh) | Shared bench primitives (throughput, prefill, gates, HE, MBPP) |
+| [`harness/leak_probe.py`](./harness/leak_probe.py) | Standalone leak detector (75-prompt corpus, `--repeat`/`--temperature` knobs, JSONL + summary outputs, CI-gatable exit code) |
+| `leak-runs/fp8-mtp3/` | MTP=3 smoke result (75 trials, 0 leaks) |
+| `leak-runs/fp8-mtp2/` | MTP=2 smoke result (74 captured, 0 leaks) |
+| `leak-runs/fp8-mtp3-extended/` | MTP=3 production validation (**300 trials @ T=0.7, 0 leaks**) |
 | `configs/tier3-bf16-dflash-n8/` | Run 2 clean — HE 92.7%, MBPP 91.1% |
 | `configs/tier3-fp8-dflash-n8/` | Run 2 clean — HE 89.0%, MBPP 88.7% |
 | `configs/tier3-fp8-mtp3/` | Run 2 clean — HE 88.4%, MBPP 89.1% |
@@ -48,7 +55,7 @@ Full numbers, throughput matrices, prefill scaling, and v3-vs-v2 deltas in [`FIN
 
 ## Configurations tested
 
-All four configs share: TP=2, `--enable-prefix-caching`, `--default-chat-template-kwargs.preserve_thinking true`, `--attention-backend flashinfer`, and (where applicable) `--speculative-config.attention_backend flashinfer` + `--speculative-config.use_local_argmax_reduction true`.
+All four configs share: TP=2, `--enable-prefix-caching`, `--default-chat-template-kwargs.preserve_thinking true`, `--attention-backend flashinfer`. **DFlash configs only** also pass `--speculative-config.attention_backend flashinfer` and `--speculative-config.use_local_argmax_reduction true`. **MTP configs cannot** use these two flags — the `Qwen3_5MTP` drafter does not implement `get_top_tokens()`, so the engine rejects `use_local_argmax_reduction` with a fatal `ValueError`. This was discovered the hard way during the v3 production rollout (see [`FINAL_REPORT.md` § Production Incident](./FINAL_REPORT.md#production-incident-2026-05-12-mtp--use_local_argmax_reduction-incompatibility)).
 
 | Label | Base model | Quantization | Spec method | Num speculative tokens |
 |---|---|---|---|---|

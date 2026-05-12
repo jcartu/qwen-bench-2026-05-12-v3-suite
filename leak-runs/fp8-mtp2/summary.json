@@ -1,0 +1,18 @@
+{
+  "label": "fp8-mtp2",
+  "endpoint": "http://localhost:11435/v1/chat/completions",
+  "model": "Qwen3.6-27B",
+  "n_prompts": 75,
+  "n_concurrent": 4,
+  "max_tokens": 3000,
+  "wall_s": null,
+  "n_leaks_in_content": 0,
+  "leak_rate": 0.0,
+  "n_errors": 0,
+  "n_responses_captured": 74,
+  "leaky_indices": [],
+  "error_indices": [],
+  "patterns_seen": [],
+  "timestamp": "2026-05-12T10:24:30+0300",
+  "notes": "Probe completed and emitted all 74 ok markers but the parent shell killed the process before summary.json was written. Stats reconstructed from /tmp/leak-mtp2.log (preserved as run.log here). Zero leak markers detected in the log. One prompt's status line was not flushed before SIGTERM (likely the final straggler #69)."
+}

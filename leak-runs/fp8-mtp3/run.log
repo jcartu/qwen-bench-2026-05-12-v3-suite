@@ -1,0 +1,96 @@
+[leak-probe] label=fp8-mtp3 endpoint=http://localhost:11435/v1/chat/completions model=Qwen3.6-27B
+[leak-probe] n=75 concurrency=4 max_tokens=3000
+[leak-probe] ok   #  1 (2.891s) '  Hi! How can I help you today? 😊'
+[leak-probe] ok   #  3 (3.135s) '  4'
+[leak-probe] ok   #  2 (3.916s) '  pineapple.'
+[leak-probe] ok   #  0 (4.033s) '  OK'
+[leak-probe] ok   #  5 (1.896s) '  226'
+[leak-probe] ok   #  4 (2.472s) '  yes'
+[leak-probe] ok   #  6 (2.592s) '  450'
+[leak-probe] ok   #  7 (2.757s) '  12'
+[leak-probe] ok   #  8 (2.38s) '  5040'
+[leak-probe] ok   # 10 (2.143s) '  ```python lambda x: x ** 2 ```'
+[leak-probe] ok   #  9 (3.662s) '  1024'
+[leak-probe] ok   # 12 (2.843s) '  ```python s[::-1] ```'
+[leak-probe] ok   # 11 (3.466s) '  ```python lambda n: n % 2 == 0 ```'
+[leak-probe] ok   # 14 (3.598s) '  ```python sum(nums) ```  *(If you need to store the result'
+[leak-probe] ok   # 13 (6.872s) '  ```python len(xs) ```'
+[leak-probe] ok   # 16 (10.801s) '  ```python def is_prime(n):     if n <= 1:         return F'
+[leak-probe] ok   # 17 (9.651s) '  ```python def gcd(a, b):     while b:         a, b = b, a '
+[leak-probe] ok   # 20 (4.124s) '  4'
+[leak-probe] ok   # 18 (12.336s) '  ```python def merge_sort(xs):     if len(xs) <= 1:        '
+[leak-probe] ok   # 22 (3.444s) '  60'
+[leak-probe] ok   # 21 (5.8s) '  BCAB'
+[leak-probe] ok   # 15 (25.14s) ''
+[leak-probe] ok   # 23 (5.041s) '  The probability is **5/16**.   *(Brief reasoning: There ar'
+[leak-probe] ok   # 25 (1.93s) '  Carol'
+[leak-probe] ok   # 26 (2.301s) '  Yes.'
+[leak-probe] ok   # 24 (6.766s) '  2520'
+[leak-probe] ok   # 28 (2.927s) '  10'
+[leak-probe] ok   # 19 (21.734s) '  ```python import re from collections import Counter  def c'
+[leak-probe] ok   # 27 (5.491s) '  0.05'
+[leak-probe] ok   # 29 (5.751s) '  4'
+[leak-probe] ok   # 30 (10.03s) '  Blue light burns my eyes, Semicolon missing still, Dreams '
+[leak-probe] ok   # 34 (3.44s) '  Caching dramatically improves response times by serving st'
+[leak-probe] ok   # 32 (12.8s) '  Blue is the cool, smooth sensation of water washing over y'
+[leak-probe] ok   # 35 (1.102s) '  F. Scott Fitzgerald'
+[leak-probe] ok   # 36 (1.311s) '  Canberra'
+[leak-probe] ok   # 37 (1.053s) '  1989'
+[leak-probe] ok   # 38 (0.836s) '  Au'
+[leak-probe] ok   # 33 (13.317s) '  Prioritize clear communication and collaboration over perf'
+[leak-probe] ok   # 39 (1.521s) '  Leonardo da Vinci'
+[leak-probe] ok   # 41 (3.404s) '  28'
+[leak-probe] ok   # 43 (2.234s) '  Friday'
+[leak-probe] ok   # 42 (6.721s) '  1. Fill the 5L jug. 2. Pour from the 5L jug into the 3L ju'
+[leak-probe] ok   # 44 (3.613s) '  24'
+[leak-probe] ok   # 31 (26.999s) ''
+[leak-probe] ok   # 45 (5.14s) '  Idempotent describes an operation that produces the same r'
+[leak-probe] ok   # 40 (12.931s) '  They meet at **12:24 PM**.  **Step-by-step:** 1. From 9:00'
+[leak-probe] ok   # 49 (2.279s) '  The CAP theorem states that a distributed system can simul'
+[leak-probe] ok   # 50 (1.452s) '  Bonjour'
+[leak-probe] ok   # 47 (5.226s) '  A binary search tree is a tree data structure in which eac'
+[leak-probe] ok   # 48 (4.807s) '  Amortized complexity is the average time or cost per opera'
+[leak-probe] ok   # 53 (1.507s) '  German'
+[leak-probe] ok   # 52 (2.068s) '  Aluminium'
+[leak-probe] ok   # 51 (2.682s) '  octopuses'
+[leak-probe] ok   # 54 (2.03s) '  "I think, therefore I am."'
+[leak-probe] ok   # 55 (2.377s) '  32'
+[leak-probe] ok   # 56 (2.74s) '  Serene'
+[leak-probe] ok   # 57 (0.979s) '  !'
+[leak-probe] ok   # 58 (1.295s) '  tac'
+[leak-probe] ok   # 59 (1.787s) '  None. Z is the final letter of the English alphabet.'
+[leak-probe] ok   # 60 (2.483s) '  O(n²)'
+[leak-probe] ok   # 62 (1.644s) '  No'
+[leak-probe] ok   # 46 (16.048s) '  A monad is an indivisible, fundamental unit that serves as'
+[leak-probe] ok   # 61 (3.133s) '  O(log n)'
+[leak-probe] ok   # 64 (1.392s) '  404'
+[leak-probe] ok   # 65 (5.363s) '  About 31.5 million seconds.'
+[leak-probe] ok   # 63 (6.506s) '  TCP ensures reliable, ordered data delivery with error che'
+[leak-probe] ok   # 67 (4.79s) '  It depends on how you define "Tokyo":  • **Tokyo Metropoli'
+[leak-probe] ok   # 66 (5.941s) '  A typical novel usually falls between **70,000 and 100,000'
+[leak-probe] ok   # 70 (2.17s) '  I'
+[leak-probe] ok   # 68 (3.439s) '  Approximately **300,000 km/s**.   *(The exact value is 299'
+[leak-probe] ok   # 71 (2.833s) '  8'
+[leak-probe] ok   # 72 (2.209s) '  6'
+[leak-probe] ok   # 73 (1.808s) '  Rainbow/spectrum order. Next: green.'
+[leak-probe] ok   # 74 (2.206s) '  Sunday'
+[leak-probe] ok   # 69 (8.914s) '  Roughly **17 million books** (and other printed materials)'
+
+[leak-probe] === fp8-mtp3 summary ===
+{
+  "label": "fp8-mtp3",
+  "endpoint": "http://localhost:11435/v1/chat/completions",
+  "model": "Qwen3.6-27B",
+  "n_prompts": 75,
+  "n_concurrent": 4,
+  "max_tokens": 3000,
+  "wall_s": 97.8,
+  "n_leaks_in_content": 0,
+  "leak_rate": 0.0,
+  "n_errors": 0,
+  "leaky_indices": [],
+  "error_indices": [],
+  "patterns_seen": [],
+  "timestamp": "2026-05-12T10:16:59+0300"
+}
+[leak-probe] artifacts: leak-runs/fp8-mtp3/summary.json, responses.jsonl, leaks.jsonl
