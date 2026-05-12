@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/study_hero.png" alt="v3 stress validation — 4-config Tier-3 suite on Blackwell TP=2" width="100%" />
+</p>
+
 # qwen-bench-2026-05-12-v3-suite
 
 **Date:** 2026-05-12 (Tue) MSK

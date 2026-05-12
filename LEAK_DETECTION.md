@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/leak_probe.png" alt="Dual-mode leak probe — chat + tool-calling traffic, zero leaks across content + tool_call name + tool_call arguments" width="100%" />
+</p>
+
 # Think-Token Leak Detection — Methodology & Results
 
 **Date:** 2026-05-12

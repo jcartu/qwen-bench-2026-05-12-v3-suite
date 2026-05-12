@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/images/study_hero.png" alt="Tier-3 v3 full suite — 4 configs, 1,684 quality probes, 0 engine errors on Run 2" width="100%" />
+</p>
+
 # Tier 3 v3 Full Suite — Final Report
 
 **Date:** 2026-05-12 (Tue) MSK
@@ -279,6 +283,11 @@ MTP=5 ⭐ **402 tok/s peak** at c=4 ctx=0, **105 tok/s single-user** at c=1 ctx=
 ---
 
 ## Production Incident 2026-05-12: MTP + `use_local_argmax_reduction` Incompatibility
+
+<p align="center">
+  <img src="docs/images/production_incident.png" alt="Production incident post-mortem — MTP drafter incompatible with use_local_argmax_reduction; fix isolates the flag to DFlash configs only" width="90%" />
+</p>
+
 
 **Symptom:** First v3 production promotion attempt (`launch-qwen36-27b-sota.sh` patched to `repne/vllm:v3` + MTP=3 + `--speculative-config.use_local_argmax_reduction true`) entered a systemd crash-loop. Worker fatal error:
 
