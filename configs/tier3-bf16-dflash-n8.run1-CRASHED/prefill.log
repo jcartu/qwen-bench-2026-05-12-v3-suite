@@ -1,0 +1,124 @@
+
+New version available: v0.4.15 (current: v0.4.8)
+Upgrade and restart? [Y/n]: ╭─────────────────────────────── Configuration ────────────────────────────────╮
+│ LLM Inference Benchmark                                                      │
+│ Model: Qwen3.6-27B @ localhost:11435                                         │
+│ Decode concurrency: [1]                                                      │
+│ Decode contexts: ['0', '16k', '32k', '64k', '128k']                          │
+│ Duration: 30.0s per decode test | Max tokens: 2048                           │
+│ Prefill: standalone cold profile (client) | Sustained decode: 5 cells        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Engine: vLLM 0.1.dev16595+gebc3d9d1b.d20260511  Models: ['Qwen3.6-27B']
+vLLM Prometheus reports only local KV cache (97,024 tokens), but DCP/CP 
+multiplier is not exported by this server. Pass --dcp-size N or --kv-budget to 
+enable exact KV capacity skips for remote vLLM. Leaving KV budget unset instead 
+of assuming DCP=1.
+vLLM: KV cache budget not available from metrics. Use --kv-budget to skip 
+over-capacity cells, or rely on queue detection.
+Model context length: 262,144 tokens
+Prefill tests: standalone cold profile ['8k', '16k', '32k', '64k', '128k']
+Calibrating padding text (run=mbiqikvwyazq, up to 128k)...
+  Token targeting: single-point estimate from 8k (use --token-targeting exact 
+for /tokenize binary search)
+  Calibrated: 6.20 chars/token (from 8k probe)
+  8k: 50,786 chars (~8,191 tokens)
+  16k: 101,573 chars (~16,383 tokens)
+  32k: 203,147 chars (~32,767 tokens)
+  64k: 406,295 chars (~65,535 tokens)
+  128k: 812,591 chars (~131,071 tokens)
+Done.
+
+
+
+llm-decode-bench v0.4.8
+Prefill Speed (C=1, client ISL / TTFT)                            
+                                                                  
+  Context    Tokens   TTFT (s)   Client tok/s   Server tok/s   N  
+ ──────────────────────────────────────────────────────────────── 
+  8k          8,195       1.13          7,275              —   7  
+  16k        16,226       2.23          7,276              —   4  
+  32k        32,295       4.58          7,046              —   3  
+  64k        64,420       9.83          6,555              —   1  
+  128k      128,692      22.48          5,725              —   1  
+                                                                  
+Client tok/s = prompt_tokens / TTFT. Integrated scout rows come from the 
+prefix-cache scout request that decode needs anyway. Server tok/s is optional 
+Prometheus validation when the engine exports prefill counters and the exact 
+counter delta is uncontaminated.
+
+╭────────────────────────────────── Phase 2 ───────────────────────────────────╮
+│ Sustained Decode                                                             │
+│ Steady-state decode throughput after the engine has admitted the requested   │
+│ concurrency and passed warmup. Use this as the main tuning/regression signal │
+│ for kernels, NCCL, DCP, MTP, and scheduler changes.                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Aggregate tok/s  + TTFT/ITL 
+╭────────────┬─────────────╮
+│ ctx \ conc │           1 │
+├────────────┼─────────────┤
+│ 0          │  83.3 68/11 │
+│ 16k        │ 89.0 137/11 │
+│ 32k        │ 87.1 225/11 │
+│ 64k        │ 81.9 290/11 │
+│ 128k       │ 84.2 549/11 │
+╰────────────┴─────────────╯
+Sustained Decode: aggregate tok/s uses OpenAI stream usage by default 
+(continuous completion_tokens when the server supports it). Prometheus is kept 
+as validation/scheduler data.
+Aggregate source(s): openai_continuous_usage
+Per-Request tok/s    
+╭────────────┬──────╮
+│ ctx \ conc │    1 │
+├────────────┼──────┤
+│ 0          │ 83.3 │
+│ 16k        │ 89.0 │
+│ 32k        │ 87.1 │
+│ 64k        │ 81.9 │
+│ 128k       │ 84.2 │
+╰────────────┴──────╯
+Client request latency: p50 
+/ p90 ms                    
+╭────────────┬─────────────╮
+│ ctx \ conc │           1 │
+├────────────┼─────────────┤
+│ 0          │ 24.4k/24.4k │
+│ 16k        │ 23.5k/23.5k │
+│ 32k        │ 24.1k/24.1k │
+│ 64k        │ 25.6k/25.6k │
+│ 128k       │ 25.6k/25.6k │
+╰────────────┴─────────────╯
+Aggregate cells show dim detail as TTFT ms / ITL ms for the same ctx/conc 
+coordinate. ITL is computed from observed generated tokens, including streams 
+stopped at the measurement boundary; a missing ITL means no stream produced at 
+least two measured output tokens. Per-request tok/s and request latency are 
+shown in separate per-cell matrices. Completion/sample counts and full 
+request-level distributions remain in JSON under request_samples.
+Sustained mode: client latency metrics explain request UX variance; aggregate 
+tok/s remains the primary throughput signal. 
+ITL=(last_token_time-first_token_time)/(output_tokens-1), user tok/s=1/ITL.
+
+╭────────────────────────────────── Phase 3 ───────────────────────────────────╮
+│ Burst / E2E Decode                                                           │
+│ Not run. Re-run with --run-burst to append a finite client-facing request    │
+│ burst after Sustained Decode. This is intentionally disabled by default      │
+│ because it adds another full decode matrix.                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+╭────────────────────────────── Primary Summary ───────────────────────────────╮
+│ Primary matrices repeated last so the important numbers are visible without  │
+│ scrolling back through diagnostics.                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Prefill tok/s                          Aggregate decode     
+╭──────┬─────────┬────────┬───────┬───╮tok/s                
+│ ctx  │  tokens │ TTFT s │ tok/s │ N │╭────────────┬──────╮
+├──────┼─────────┼────────┼───────┼───┤│ ctx \ conc │    1 │
+│ 8k   │   8,195 │   1.13 │ 7,275 │ 7 │├────────────┼──────┤
+│ 16k  │  16,226 │   2.23 │ 7,276 │ 4 ││ 0          │ 83.3 │
+│ 32k  │  32,295 │   4.58 │ 7,046 │ 3 ││ 16k        │ 89.0 │
+│ 64k  │  64,420 │   9.83 │ 6,555 │ 1 ││ 32k        │ 87.1 │
+│ 128k │ 128,692 │  22.48 │ 5,725 │ 1 ││ 64k        │ 81.9 │
+╰──────┴─────────┴────────┴───────┴───╯│ 128k       │ 84.2 │
+                                       ╰────────────┴──────╯
+
+Results saved to 
+/tmp/qwen-bench-2026-05-12-v3-suite/configs/tier3-bf16-dflash-n8/prefill.json

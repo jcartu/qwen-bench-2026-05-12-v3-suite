@@ -1,0 +1,272 @@
+[03:31:51] Stress harness starting
+  config: tier3-bf16-dflash-n8
+  benchmark: mbpp (257 problems)
+  endpoint: http://localhost:11435/v1/chat/completions
+  concurrency: 8
+  max_tokens: 16384
+  request_timeout: 300s
+  [  1/257] 🚨[exception] MBPP/118 fr=None t=0.0s
+  [  2/257] 🚨[exception] MBPP/140 fr=None t=0.0s
+  [  3/257] 🚨[exception] MBPP/269 fr=None t=0.0s
+  [  4/257] 🚨[exception] MBPP/95 fr=None t=0.0s
+  [  5/257] 🚨[exception] MBPP/247 fr=None t=0.0s
+  [  6/257] 🚨[exception] MBPP/74 fr=None t=0.0s
+  [  7/257] 🚨[exception] MBPP/224 fr=None t=0.0s
+  [  8/257] 🚨[exception] MBPP/18 fr=None t=0.0s
+  [  9/257] 🚨[exception] MBPP/290 fr=None t=0.0s
+  [ 10/257] 🚨[exception] MBPP/312 fr=None t=0.0s
+  [ 11/257] 🚨[exception] MBPP/428 fr=None t=0.0s
+  [ 12/257] 🚨[exception] MBPP/462 fr=None t=0.0s
+  [ 13/257] 🚨[exception] MBPP/411 fr=None t=0.0s
+  [ 14/257] 🚨[exception] MBPP/446 fr=None t=0.0s
+  [ 15/257] 🚨[exception] MBPP/19 fr=None t=0.0s
+  [ 16/257] 🚨[exception] MBPP/75 fr=None t=0.0s
+  [ 17/257] 🚨[exception] MBPP/96 fr=None t=0.0s
+  [ 18/257] 🚨[exception] MBPP/119 fr=None t=0.0s
+  [ 19/257] 🚨[exception] MBPP/141 fr=None t=0.0s
+  [ 20/257] 🚨[exception] MBPP/226 fr=None t=0.0s
+  [ 21/257] 🚨[exception] MBPP/248 fr=None t=0.0s
+  [ 22/257] 🚨[exception] MBPP/270 fr=None t=0.0s
+  [ 23/257] 🚨[exception] MBPP/291 fr=None t=0.0s
+  [ 24/257] 🚨[exception] MBPP/388 fr=None t=0.0s
+  [ 25/257] 🚨[exception] MBPP/429 fr=None t=0.0s
+  [ 26/257] 🚨[exception] MBPP/432 fr=None t=0.0s
+  [ 27/257] 🚨[exception] MBPP/468 fr=None t=0.0s
+  [ 28/257] 🚨[exception] MBPP/415 fr=None t=0.0s
+  [ 29/257] 🚨[exception] MBPP/451 fr=None t=0.0s
+  [ 30/257] 🚨[exception] MBPP/20 fr=None t=0.0s
+  [ 31/257] 🚨[exception] MBPP/77 fr=None t=0.0s
+  [ 32/257] 🚨[exception] MBPP/97 fr=None t=0.0s
+  [ 33/257] 🚨[exception] MBPP/120 fr=None t=0.0s
+  [ 34/257] 🚨[exception] MBPP/142 fr=None t=0.0s
+  [ 35/257] 🚨[exception] MBPP/227 fr=None t=0.0s
+  [ 36/257] 🚨[exception] MBPP/249 fr=None t=0.0s
+  [ 37/257] 🚨[exception] MBPP/271 fr=None t=0.0s
+  [ 38/257] 🚨[exception] MBPP/292 fr=None t=0.0s
+  [ 39/257] 🚨[exception] MBPP/389 fr=None t=0.0s
+  [ 40/257] 🚨[exception] MBPP/430 fr=None t=0.0s
+  [ 41/257] 🚨[exception] MBPP/473 fr=None t=0.0s
+  [ 42/257] 🚨[exception] MBPP/420 fr=None t=0.0s
+  [ 43/257] 🚨[exception] MBPP/455 fr=None t=0.0s
+  [ 44/257] 🚨[exception] MBPP/56 fr=None t=0.0s
+  [ 45/257] 🚨[exception] MBPP/79 fr=None t=0.0s
+  [ 46/257] 🚨[exception] MBPP/98 fr=None t=0.0s
+  [ 47/257] 🚨[exception] MBPP/123 fr=None t=0.0s
+  [ 48/257] 🚨[exception] MBPP/143 fr=None t=0.0s
+  [ 49/257] 🚨[exception] MBPP/228 fr=None t=0.0s
+  [ 50/257] 🚨[exception] MBPP/250 fr=None t=0.0s
+  [ 51/257] 🚨[exception] MBPP/272 fr=None t=0.0s
+  [ 52/257] 🚨[exception] MBPP/293 fr=None t=0.0s
+  [ 53/257] 🚨[exception] MBPP/390 fr=None t=0.0s
+  [ 54/257] 🚨[exception] MBPP/431 fr=None t=0.0s
+  [ 55/257] 🚨[exception] MBPP/477 fr=None t=0.0s
+  [ 56/257] 🚨[exception] MBPP/57 fr=None t=0.0s
+  [ 57/257] 🚨[exception] MBPP/80 fr=None t=0.0s
+  [ 58/257] 🚨[exception] MBPP/99 fr=None t=0.0s
+  [ 59/257] 🚨[exception] MBPP/124 fr=None t=0.0s
+  [ 60/257] 🚨[exception] MBPP/145 fr=None t=0.0s
+  [ 61/257] 🚨[exception] MBPP/229 fr=None t=0.0s
+  [ 62/257] 🚨[exception] MBPP/251 fr=None t=0.0s
+  [ 63/257] 🚨[exception] MBPP/273 fr=None t=0.0s
+  [ 64/257] 🚨[exception] MBPP/294 fr=None t=0.0s
+  [ 65/257] 🚨[exception] MBPP/391 fr=None t=0.0s
+  [ 66/257] 🚨[exception] MBPP/425 fr=None t=0.0s
+  [ 67/257] 🚨[exception] MBPP/459 fr=None t=0.0s
+  [ 68/257] 🚨[exception] MBPP/408 fr=None t=0.0s
+  [ 69/257] 🚨[exception] MBPP/444 fr=None t=0.0s
+  [ 70/257] 🚨[exception] MBPP/58 fr=None t=0.0s
+  [ 71/257] 🚨[exception] MBPP/82 fr=None t=0.0s
+  [ 72/257] 🚨[exception] MBPP/100 fr=None t=0.0s
+  [ 73/257] 🚨[exception] MBPP/125 fr=None t=0.0s
+  [ 74/257] 🚨[exception] MBPP/160 fr=None t=0.0s
+  [ 75/257] 🚨[exception] MBPP/230 fr=None t=0.0s
+  [ 76/257] 🚨[exception] MBPP/252 fr=None t=0.0s
+  [ 77/257] 🚨[exception] MBPP/274 fr=None t=0.0s
+  [ 78/257] 🚨[exception] MBPP/295 fr=None t=0.0s
+  [ 79/257] 🚨[exception] MBPP/392 fr=None t=0.0s
+  [ 80/257] 🚨[exception] MBPP/433 fr=None t=0.0s
+  [ 81/257] 🚨[exception] MBPP/463 fr=None t=0.0s
+  [ 82/257] 🚨[exception] MBPP/412 fr=None t=0.0s
+  [ 83/257] 🚨[exception] MBPP/447 fr=None t=0.0s
+  [ 84/257] 🚨[exception] MBPP/59 fr=None t=0.0s
+  [ 85/257] 🚨[exception] MBPP/83 fr=None t=0.0s
+  [ 86/257] 🚨[exception] MBPP/101 fr=None t=0.0s
+  [ 87/257] 🚨[exception] MBPP/126 fr=None t=0.0s
+  [ 88/257] 🚨[exception] MBPP/161 fr=None t=0.0s
+  [ 89/257] 🚨[exception] MBPP/232 fr=None t=0.0s
+  [ 90/257] 🚨[exception] MBPP/253 fr=None t=0.0s
+  [ 91/257] 🚨[exception] MBPP/276 fr=None t=0.0s
+  [ 92/257] 🚨[exception] MBPP/296 fr=None t=0.0s
+  [ 93/257] 🚨[exception] MBPP/393 fr=None t=0.0s
+  [ 94/257] 🚨[exception] MBPP/434 fr=None t=0.0s
+  [ 95/257] 🚨[exception] MBPP/470 fr=None t=0.0s
+  [ 96/257] 🚨[exception] MBPP/456 fr=None t=0.0s
+  [ 97/257] 🚨[exception] MBPP/417 fr=None t=0.0s
+  [ 98/257] 🚨[exception] MBPP/452 fr=None t=0.0s
+  [ 99/257] 🚨[exception] MBPP/61 fr=None t=0.0s
+  [100/257] 🚨[exception] MBPP/84 fr=None t=0.0s
+  [101/257] 🚨[exception] MBPP/102 fr=None t=0.0s
+  [102/257] 🚨[exception] MBPP/127 fr=None t=0.0s
+  [103/257] 🚨[exception] MBPP/162 fr=None t=0.0s
+  [104/257] 🚨[exception] MBPP/233 fr=None t=0.0s
+  [105/257] 🚨[exception] MBPP/255 fr=None t=0.0s
+  [106/257] 🚨[exception] MBPP/277 fr=None t=0.0s
+  [107/257] 🚨[exception] MBPP/297 fr=None t=0.0s
+  [108/257] 🚨[exception] MBPP/394 fr=None t=0.0s
+  [109/257] 🚨[exception] MBPP/435 fr=None t=0.0s
+  [110/257] 🚨[exception] MBPP/437 fr=None t=0.0s
+  [111/257] 🚨[exception] MBPP/474 fr=None t=0.0s
+  [112/257] 🚨[exception] MBPP/421 fr=None t=0.0s
+  [113/257] 🚨[exception] MBPP/62 fr=None t=0.0s
+  [114/257] 🚨[exception] MBPP/85 fr=None t=0.0s
+  [115/257] 🚨[exception] MBPP/103 fr=None t=0.0s
+  [116/257] 🚨[exception] MBPP/128 fr=None t=0.0s
+  [117/257] 🚨[exception] MBPP/163 fr=None t=0.0s
+  [118/257] 🚨[exception] MBPP/234 fr=None t=0.0s
+  [119/257] 🚨[exception] MBPP/256 fr=None t=0.0s
+  [120/257] 🚨[exception] MBPP/278 fr=None t=0.0s
+  [121/257] 🚨[exception] MBPP/299 fr=None t=0.0s
+  [122/257] 🚨[exception] MBPP/395 fr=None t=0.0s
+  [123/257] 🚨[exception] MBPP/436 fr=None t=0.0s
+  [124/257] 🚨[exception] MBPP/441 fr=None t=0.0s
+  [125/257] 🚨[exception] MBPP/478 fr=None t=0.0s
+  [126/257] 🚨[exception] MBPP/104 fr=None t=0.0s
+  [127/257] 🚨[exception] MBPP/129 fr=None t=0.0s
+  [128/257] 🚨[exception] MBPP/63 fr=None t=0.0s
+  [129/257] 🚨[exception] MBPP/86 fr=None t=0.0s
+  [130/257] 🚨[exception] MBPP/164 fr=None t=0.0s
+  [131/257] 🚨[exception] MBPP/235 fr=None t=0.0s
+  [132/257] 🚨[exception] MBPP/257 fr=None t=0.0s
+  [133/257] 🚨[exception] MBPP/279 fr=None t=0.0s
+  [134/257] 🚨[exception] MBPP/300 fr=None t=0.0s
+  [135/257] 🚨[exception] MBPP/396 fr=None t=0.0s
+  [136/257] 🚨[exception] MBPP/426 fr=None t=0.0s
+  [137/257] 🚨[exception] MBPP/460 fr=None t=0.0s
+  [138/257] 🚨[exception] MBPP/409 fr=None t=0.0s
+  [139/257] 🚨[exception] MBPP/445 fr=None t=0.0s
+  [140/257] 🚨[exception] MBPP/64 fr=None t=0.0s
+  [141/257] 🚨[exception] MBPP/87 fr=None t=0.0s
+  [142/257] 🚨[exception] MBPP/105 fr=None t=0.0s
+  [143/257] 🚨[exception] MBPP/130 fr=None t=0.0s
+  [144/257] 🚨[exception] MBPP/165 fr=None t=0.0s
+  [145/257] 🚨[exception] MBPP/237 fr=None t=0.0s
+  [146/257] 🚨[exception] MBPP/259 fr=None t=0.0s
+  [147/257] 🚨[exception] MBPP/280 fr=None t=0.0s
+  [148/257] 🚨[exception] MBPP/301 fr=None t=0.0s
+  [149/257] 🚨[exception] MBPP/397 fr=None t=0.0s
+  [150/257] 🚨[exception] MBPP/438 fr=None t=0.0s
+  [151/257] 🚨[exception] MBPP/464 fr=None t=0.0s
+  [152/257] 🚨[exception] MBPP/413 fr=None t=0.0s
+  [153/257] 🚨[exception] MBPP/448 fr=None t=0.0s
+  [154/257] 🚨[exception] MBPP/65 fr=None t=0.0s
+  [155/257] 🚨[exception] MBPP/88 fr=None t=0.0s
+  [156/257] 🚨[exception] MBPP/106 fr=None t=0.0s
+  [157/257] 🚨[exception] MBPP/131 fr=None t=0.0s
+  [158/257] 🚨[exception] MBPP/166 fr=None t=0.0s
+  [159/257] 🚨[exception] MBPP/238 fr=None t=0.0s
+  [160/257] 🚨[exception] MBPP/260 fr=None t=0.0s
+  [161/257] 🚨[exception] MBPP/281 fr=None t=0.0s
+  [162/257] 🚨[exception] MBPP/304 fr=None t=0.0s
+  [163/257] 🚨[exception] MBPP/398 fr=None t=0.0s
+  [164/257] 🚨[exception] MBPP/439 fr=None t=0.0s
+  [165/257] 🚨[exception] MBPP/471 fr=None t=0.0s
+  [166/257] 🚨[exception] MBPP/418 fr=None t=0.0s
+  [167/257] 🚨[exception] MBPP/453 fr=None t=0.0s
+  [168/257] 🚨[exception] MBPP/66 fr=None t=0.0s
+  [169/257] 🚨[exception] MBPP/89 fr=None t=0.0s
+  [170/257] 🚨[exception] MBPP/108 fr=None t=0.0s
+  [171/257] 🚨[exception] MBPP/132 fr=None t=0.0s
+  [172/257] 🚨[exception] MBPP/167 fr=None t=0.0s
+  [173/257] 🚨[exception] MBPP/239 fr=None t=0.0s
+  [174/257] 🚨[exception] MBPP/261 fr=None t=0.0s
+  [175/257] 🚨[exception] MBPP/282 fr=None t=0.0s
+  [176/257] 🚨[exception] MBPP/305 fr=None t=0.0s
+  [177/257] 🚨[exception] MBPP/399 fr=None t=0.0s
+  [178/257] 🚨[exception] MBPP/440 fr=None t=0.0s
+  [179/257] 🚨[exception] MBPP/475 fr=None t=0.0s
+  [180/257] 🚨[exception] MBPP/457 fr=None t=0.0s
+  [181/257] 🚨[exception] MBPP/422 fr=None t=0.0s
+  [182/257] 🚨[exception] MBPP/67 fr=None t=0.0s
+  [183/257] 🚨[exception] MBPP/11 fr=None t=0.0s
+  [184/257] 🚨[exception] MBPP/90 fr=None t=0.0s
+  [185/257] 🚨[exception] MBPP/109 fr=None t=0.0s
+  [186/257] 🚨[exception] MBPP/133 fr=None t=0.0s
+  [187/257] 🚨[exception] MBPP/168 fr=None t=0.0s
+  [188/257] 🚨[exception] MBPP/240 fr=None t=0.0s
+  [189/257] 🚨[exception] MBPP/262 fr=None t=0.0s
+  [190/257] 🚨[exception] MBPP/283 fr=None t=0.0s
+  [191/257] 🚨[exception] MBPP/306 fr=None t=0.0s
+  [192/257] 🚨[exception] MBPP/400 fr=None t=0.0s
+  [193/257] 🚨[exception] MBPP/442 fr=None t=0.0s
+  [194/257] 🚨[exception] MBPP/479 fr=None t=0.0s
+  [195/257] 🚨[exception] MBPP/111 fr=None t=0.0s
+  [196/257] 🚨[exception] MBPP/135 fr=None t=0.0s
+  [197/257] 🚨[exception] MBPP/91 fr=None t=0.0s
+  [198/257] 🚨[exception] MBPP/68 fr=None t=0.0s
+  [199/257] 🚨[exception] MBPP/12 fr=None t=0.0s
+  [200/257] 🚨[exception] MBPP/170 fr=None t=0.0s
+  [201/257] 🚨[exception] MBPP/242 fr=None t=0.0s
+  [202/257] 🚨[exception] MBPP/264 fr=None t=0.0s
+  [203/257] 🚨[exception] MBPP/284 fr=None t=0.0s
+  [204/257] 🚨[exception] MBPP/307 fr=None t=0.0s
+  [205/257] 🚨[exception] MBPP/401 fr=None t=0.0s
+  [206/257] 🚨[exception] MBPP/461 fr=None t=0.0s
+  [207/257] 🚨[exception] MBPP/410 fr=None t=0.0s
+  [208/257] 🚨[exception] MBPP/69 fr=None t=0.0s
+  [209/257] 🚨[exception] MBPP/14 fr=None t=0.0s
+  [210/257] 🚨[exception] MBPP/92 fr=None t=0.0s
+  [211/257] 🚨[exception] MBPP/113 fr=None t=0.0s
+  [212/257] 🚨[exception] MBPP/137 fr=None t=0.0s
+  [213/257] 🚨[exception] MBPP/171 fr=None t=0.0s
+  [214/257] 🚨[exception] MBPP/244 fr=None t=0.0s
+  [215/257] 🚨[exception] MBPP/265 fr=None t=0.0s
+  [216/257] 🚨[exception] MBPP/285 fr=None t=0.0s
+  [217/257] 🚨[exception] MBPP/308 fr=None t=0.0s
+  [218/257] 🚨[exception] MBPP/404 fr=None t=0.0s
+  [219/257] 🚨[exception] MBPP/414 fr=None t=0.0s
+  [220/257] 🚨[exception] MBPP/450 fr=None t=0.0s
+  [221/257] 🚨[exception] MBPP/70 fr=None t=0.0s
+  [222/257] 🚨[exception] MBPP/16 fr=None t=0.0s
+  [223/257] 🚨[exception] MBPP/93 fr=None t=0.0s
+  [224/257] 🚨[exception] MBPP/115 fr=None t=0.0s
+  [225/257] 🚨[exception] MBPP/138 fr=None t=0.0s
+  [226/257] 🚨[exception] MBPP/172 fr=None t=0.0s
+  [227/257] 🚨[exception] MBPP/245 fr=None t=0.0s
+  [228/257] 🚨[exception] MBPP/266 fr=None t=0.0s
+  [229/257] 🚨[exception] MBPP/286 fr=None t=0.0s
+  [230/257] 🚨[exception] MBPP/309 fr=None t=0.0s
+  [231/257] 🚨[exception] MBPP/405 fr=None t=0.0s
+  [232/257] 🚨[exception] MBPP/472 fr=None t=0.0s
+  [233/257] 🚨[exception] MBPP/419 fr=None t=0.0s
+  [234/257] 🚨[exception] MBPP/71 fr=None t=0.0s
+  [235/257] 🚨[exception] MBPP/17 fr=None t=0.0s
+  [236/257] 🚨[exception] MBPP/94 fr=None t=0.0s
+  [237/257] 🚨[exception] MBPP/116 fr=None t=0.0s
+  [238/257] 🚨[exception] MBPP/139 fr=None t=0.0s
+  [239/257] 🚨[exception] MBPP/454 fr=None t=0.0s
+  [240/257] 🚨[exception] MBPP/222 fr=None t=0.0s
+  [241/257] 🚨[exception] MBPP/246 fr=None t=0.0s
+  [242/257] 🚨[exception] MBPP/267 fr=None t=0.0s
+  [243/257] 🚨[exception] MBPP/287 fr=None t=0.0s
+  [244/257] 🚨[exception] MBPP/310 fr=None t=0.0s
+  [245/257] 🚨[exception] MBPP/406 fr=None t=0.0s
+  [246/257] 🚨[exception] MBPP/476 fr=None t=0.0s
+  [247/257] 🚨[exception] MBPP/72 fr=None t=0.0s
+  [248/257] 🚨[exception] MBPP/117 fr=None t=0.0s
+  [249/257] 🚨[exception] MBPP/223 fr=None t=0.0s
+  [250/257] 🚨[exception] MBPP/268 fr=None t=0.0s
+  [251/257] 🚨[exception] MBPP/311 fr=None t=0.0s
+  [252/257] 🚨[exception] MBPP/424 fr=None t=0.0s
+  [253/257] 🚨[exception] MBPP/427 fr=None t=0.0s
+  [254/257] 🚨[exception] MBPP/458 fr=None t=0.0s
+  [255/257] 🚨[exception] MBPP/465 fr=None t=0.0s
+  [256/257] 🚨[exception] MBPP/407 fr=None t=0.0s
+  [257/257] 🚨[exception] MBPP/443 fr=None t=0.0s
+
+[03:31:52] DONE in 0.5s (0.0 min)
+  Pass rate: 0/257 = 0.0%
+  Failure modes: {'exception': 257}
+  Mean elapsed: 0.0s, p95: 0.0s
+  Effective tok/s: 0.0
+  Saved: /tmp/qwen-bench-2026-05-12-v3-suite/configs/tier3-bf16-dflash-n8/mbpp.jsonl
+  Summary: /tmp/qwen-bench-2026-05-12-v3-suite/configs/tier3-bf16-dflash-n8/mbpp_summary.json
